@@ -1,10 +1,20 @@
-# Kế hoạch kiểm thử
-Nguyễn Thành Đạt · TS03242 · SD21307
+# Kế hoạch kiểm thử SuMon
 
-Mục tiêu tuần 1 là web khởi động, tạo tài khoản, đăng nhập và CRUD triều đại. Dùng Eclipse, JDK 21, Tomcat 11, SQL Server với database SuMonDB hiện có hoặc bản backup đầy đủ của tác giả. Script sql/chat_moderation_migration.sql chỉ bổ sung cột chat, cần các bảng chat có sẵn.
+Nguyễn Thành Đạt · TS03242 · SD21307. Lịch đề xuất cập nhật Tuần 1 và 2 vào 15/11/2026.
 
-Chuẩn bị một tài khoản admin đang hoạt động có mật khẩu BCrypt hợp lệ; một tài khoản thường và một tài khoản khóa. Không có tài khoản admin mẫu được xác minh trong ZIP. Dùng username mới cho từng lần đăng ký, một triều đại QA-TS03242 chưa liên kết để thử CRUD.
+| Nhân lực | Thời hạn | Ngày bắt đầu | Ngày bàn giao | Phương thức | Phạm vi và nhiệm vụ |
+|---|---|---|---|---|---|
+| Nguyễn Thành Đạt | Buổi cập nhật | 15/11/2026 | 15/11/2026 | Đọc mã và tài liệu | Đối chiếu đăng ký, đăng nhập và CRUD triều đại với đặc tả. |
+| Nguyễn Thành Đạt | Buổi cập nhật | 15/11/2026 | 15/11/2026 | JUnit 5 và Mockito | Thực thi 20 ca UT_001–UT_020. Biên 5/6/7 ký tự tại form và hành vi server khi POST trực tiếp. Kiểm tra năm trước/bằng/sau, ID và năm sai định dạng. |
+| Nguyễn Thành Đạt | Khi có SQL Server thử | 15/11/2026 | Cập nhật sau khi chạy | Eclipse/Tomcat, trình duyệt, HTTP | Chạy 28 ca TC001–TC028. Kiểm tra phản hồi, quyền và bản ghi DB. |
+| Nguyễn Thành Đạt | Sau khi kiểm tra | 15/11/2026 | 15/11/2026 | Maven và GitHub | Lưu report Surefire, cập nhật trạng thái thực tế và nộp link commit cá nhân. |
 
-Thiết kế ca cho Controller và UI theo phân vùng hợp lệ/rỗng/trùng/sai quyền và biên mật khẩu 5/6/7, năm bằng nhau hoặc đảo thứ tự, kích thước ảnh quanh 10 MiB. Ca server dùng POST multipart hoặc công cụ HTTP có session phù hợp. Kiểm tra lại bằng tải trang và truy vấn DB, vì DAO có thể bỏ qua lỗi.
+| Điều kiện | Tiêu chí |
+|---|---|
+| Bắt đầu JUnit | JDK 21, Maven, JUnit 5 và Mockito. Chuẩn bị được dependencies. |
+| Bắt đầu ca web | Tomcat tương thích Servlet, SQL Server thử, dữ liệu nền và tài khoản đúng vai trò. Xem SPECIFICATIONS.md. |
+| Tạm dừng | Ghi lỗi môi trường hoặc dữ liệu thiếu. Khi xử lý xong, chạy lại ca bị ảnh hưởng. |
+| Hoàn thành JUnit | 20 ca, 0 failures, 0 errors, 0 skipped. Giữ báo cáo Maven. |
+| Hoàn thành web | Ghi Actual Result cho 28 ca. Với sai khác, ghi ID, dữ liệu, bước tái hiện và bằng chứng. |
 
-Y1 chỉ xác nhận khi chạy thật thành công đăng ký, đăng nhập và CRUD. Ghi kết quả thực tế, dữ liệu đã dùng và log/ảnh cho lỗi. Các ca trong bản này đều Chưa chạy. Chưa có môi trường Java 21/Tomcat/SQL Server để thực thi. Chat AI, quiz, bình luận và các chức năng khác ngoài phạm vi tuần 1.
+JUnit xác nhận phản hồi HTTP, session và lời gọi DAO/service tại Controller. Các ca ngoại lệ ghi hành vi hiện tại để theo dõi. Kiểm tra ghi dữ liệu, JSP, filter và upload thực hiện với Tomcat và SQL Server thử.

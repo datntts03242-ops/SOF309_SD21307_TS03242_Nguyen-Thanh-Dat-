@@ -22,3 +22,7 @@ Controller triều đại chưa chặn startYear > endYear. Kiểm tra bằng ph
 Giới hạn upload trong annotation: một file 10 MiB, tổng request 20 MiB.
 DAO có nhánh bắt lỗi rồi in stack trace; phải xác minh dữ liệu sau chuyển trang.
 Các bảng tối thiểu cho luồng này gồm Users, ActivityLog, Dynasties. UserDAO đọc cả warning_count và banned_at. Chạy trang chủ có thể cần các bảng khác.
+
+
+## Phạm vi JUnit Tuần 2
+Bộ test gọi các Controller thật với DAO/service giả lập. Có 20 lượt JUnit cho đăng ký, đăng nhập và CRUD triều đại. Xem từng trường hợp trong TEST_CASES.md.

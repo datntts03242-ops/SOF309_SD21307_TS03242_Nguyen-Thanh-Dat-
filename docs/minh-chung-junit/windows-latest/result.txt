@@ -1,0 +1,4 @@
+﻿Run time: 2026-11-17T21:45:01.1468562+07:00
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0
+Command: mvn clean test -Dtest=SuMonControllerTest
+BUILD SUCCESS

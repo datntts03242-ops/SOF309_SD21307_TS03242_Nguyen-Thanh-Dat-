@@ -1,8 +1,15 @@
 package entity;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 public class QuizResult {
+
+    private int userId;
+    private String userName;
+    private int difficulty;
+    private int score;
+    private Timestamp createdAt;
 
     private int totalQuestion;
 
@@ -15,6 +22,46 @@ public class QuizResult {
     private List<Question> wrongQuestions;
 
     public QuizResult() {
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public int getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(int difficulty) {
+        this.difficulty = difficulty;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public Timestamp getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
     public int getTotalQuestion() {

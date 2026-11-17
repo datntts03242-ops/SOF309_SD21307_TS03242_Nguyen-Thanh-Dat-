@@ -9,3 +9,6 @@ Prompt có thể tái sử dụng: Bạn là QA Lead. Dùng SPECIFICATIONS.md c�
 Kết quả: bộ đặc tả, kế hoạch, test cases; gộp JUnit/Selenium vào Maven. Đối chiếu đăng nhập username, BCrypt, min 6 trên HTML và giới hạn upload 10 MiB. Phát hiện thiếu script tạo database đầy đủ, ghi rõ cần SuMonDB sẵn có.
 Chuyển mật khẩu SQL hardcode sang biến môi trường SUMON_DB_PASSWORD để bản đưa lên repo dùng cấu hình riêng trên máy.
 Sinh viên cần chạy lại, ghi kết quả thật và bổ sung minh chứng theo quá trình của mình.
+
+
+Cập nhật 15/11/2026. Lập lại Test Plan theo lịch, nhãn trách nhiệm và tiêu chí. Mỗi Test Case có tiền điều kiện, bước thực hiện, dữ liệu và mong đợi theo mã của dự án.
